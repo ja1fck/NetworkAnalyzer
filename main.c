@@ -41,7 +41,7 @@ int main(void){
 	
 	int i;
 
-	FILE *fp;
+	FILE *fp, *gp;
 	
 	CreateSineWave(&SinWaveData);
 
@@ -56,6 +56,16 @@ int main(void){
 		fprintf(fp, "%f, %f \n", SinWaveData.Time[i], SinWaveData.Data[i] );
 	}
 
-
 	fclose(fp);
+	
+	//"Plot data.dat using gunplot"
+	if((gp = popen("gnuplot -persist", "w")) == NULL)
+	{
+		printf("fail to open gnuplot\n");
+		return EXIT_FAILURE;
+	}else{
+		fprintf(gp, "plot \"data.dat\" \n");
+	}
+	pclose(gp);
+
 }

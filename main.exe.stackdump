@@ -1,7 +1,10 @@
-Exception: STATUS_ACCESS_VIOLATION at eip=6114D9AB
-eax=00000000 ebx=00000012 ecx=00000000 edx=00000000 esi=0022D51C edi=0022CBF8
-ebp=00000000 esp=0022CBE0 program=C:\cygwin\home\yoshinof\Cprgjects\Test\main.exe, pid 7436, thread main
+Exception: STATUS_STACK_OVERFLOW at eip=00401413
+eax=001D7910 ebx=0022CBE0 ecx=00032BE0 edx=00000002 esi=6130B44A edi=611CCFAE
+ebp=0022CC28 esp=0022CBD4 program=C:\Cygwin\home\user\Cprog\NetworkAnalyzer\main.exe, pid 596, thread unknown (0x141C)
 cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
 Stack trace:
 Frame     Function  Args
+0022CC28  00401413 (0022CC5C, 00000002, 61211940, 61153D27)
+0022CC88  00401305 (00000001, 0022CCAC, 20010100, 6100833B)
+0022CD28  6100839A (00000000, 0022CD84, 61007410, 00000000)
 End of stack trace
